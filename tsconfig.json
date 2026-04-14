@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                /* Latest stable JavaScript version for Node.js */
+    "module": "NodeNext",             /* Recommended for modern Node.js ESM/CJS support */
+    "moduleResolution": "NodeNext",
+    "outDir": "./dist",               /* Where compiled files go */
+    "rootDir": "./src",               /* Where source files are located */
+    "strict": true,                   /* Enables all strict type-checking options */
+    "esModuleInterop": true,          /* Simplifies importing CommonJS modules */
+    "skipLibCheck": true,             /* Faster builds by skipping type checks of declaration files */
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],            /* Include all files in the src folder */
+  "exclude": ["node_modules", "dist"] /* Ignore dependencies and build output */
+}

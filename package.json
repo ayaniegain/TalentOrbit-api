@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "project/\r │\r ├── src/\r │   ├── config/          → DB connection, env config\r │   │     db.ts\r │\r │   ├── controllers/     → request handling logic\r │   │     user.controller.ts\r │\r │   ├── models/          → mongoose schemas\r │   │     user.model.ts\r │\r │   ├── routes/          → API routes\r │   │     user.routes.ts\r │\r │   ├── middleware/      → auth, error handlers\r │   │     auth.middleware.ts\r │   │     error.middleware.ts\r │\r │   ├── services/        → business logic layer (optional but recommended)\r │   │     user.service.ts\r │\r │   ├── utils/           → helper functions\r │   │     logger.ts\r │\r │   ├── types/           → custom TypeScript interfaces\r │   │     index.ts\r │\r │   ├── app.ts           → express app setup\r │   └── server.ts        → entry point\r │\r ├── dist/                → compiled JS\r ├── .env\r ├── package.json\r ├── tsconfig.json",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --exec tsx src/server.ts",
+    "start": "ts-node-dev --esm src/server.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.4.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.5.2",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
