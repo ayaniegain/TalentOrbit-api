@@ -8,3 +8,18 @@ export interface IUser extends Document {
   password: string;
   role: "admin" | "user";
 }
+export interface IJob extends Document {
+  title: string;
+  category: string[];
+  jobDescription: string;
+  location: string;
+  salaryRange: {
+    min: number;
+    max: number;
+  };
+  companyLogo: string;
+  companyName: string;
+  companyWebsite: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
