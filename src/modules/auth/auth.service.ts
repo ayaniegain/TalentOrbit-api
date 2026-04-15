@@ -1,5 +1,6 @@
 import { log } from "node:console";
-import User from "../../models/user.model.js";
+import User from "../../models/auth.model.js";
+import UserProfile from "../../models/user.profile.model.js";
 import { RegisterDto } from "./auth.dto.js";
 import { hashPassword, comparePassword } from "../../utils/hashPassword.js";
 import { generateAccessToken, generateRefreshToken } from "../../utils/generateToken.js";
@@ -22,6 +23,11 @@ export async function registerUser(payload: RegisterDto) {
     password: hashedPassword,
   });
 
+  // Create user profile automatically
+  await UserProfile.create({
+    userId: createdUser._id.toString(),
+  });
+
   return {
     id: createdUser._id,
     fullname: createdUser.fullname,
@@ -35,7 +41,6 @@ export async function loginUser(email: string, password: string) {
   if (!user) {
     throw { status: 401, message: "Invalid credentials" };
   }
-
   const isPasswordValid = await comparePassword(password, user.password);
   if (!isPasswordValid) {
     throw { status: 401, message: "Invalid credentials" };

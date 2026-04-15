@@ -8,3 +8,16 @@ export interface IUser extends Document {
   password: string;
   role: "admin" | "user";
 }
+
+export interface IUserProfile extends Document {
+  userId: string; // Reference to User
+  phone?: string;
+  address?: string;
+  bio?: string;
+  skills?: string[];
+  experience?: string;
+  resumeUrl?: string;
+  linkedinUrl?: string;
+  githubUrl?: string;
+  portfolioUrl?: string;
+}
