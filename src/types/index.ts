@@ -21,3 +21,18 @@ export interface IUserProfile extends Document {
   githubUrl?: string;
   portfolioUrl?: string;
 }
+export interface IJob extends Document {
+  title: string;
+  category: string[];
+  jobDescription: string;
+  location: string;
+  salaryRange: {
+    min: number;
+    max: number;
+  };
+  companyLogo: string;
+  companyName: string;
+  companyWebsite: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
