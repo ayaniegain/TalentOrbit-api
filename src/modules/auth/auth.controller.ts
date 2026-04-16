@@ -41,6 +41,7 @@ export async function register(
   }
 }
 
+console.log("Auth routes initialized");
 
  export async function login(
   req: Request,
@@ -49,6 +50,9 @@ export async function register(
 ) {
     try {
         const { email, password } = req.body;
+
+console.log("email",email, password);
+
 
         console.log("Received login request:", { email, password });
 
